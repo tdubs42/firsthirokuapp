@@ -14,11 +14,11 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, 'front-end/build')))
 
 app.use('/api/*', (_, res) => {
-  res.json({data: "Tacos, yum"})
+  res.json({taco: "Tacos, yum"})
 })
 
 app.use('*', (_, res) => {
-  res.sendFile(path.join(__dirname, 'front-end/build', 'index.html'))
+  res.sendFile(path.join(__dirname, 'front-end/build/index.html'))
 })
 
 app.listen(port, () => {
